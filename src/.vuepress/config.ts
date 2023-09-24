@@ -1,4 +1,4 @@
-import { docsearchPlugin } from "@vuepress/plugin-docsearch";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 
@@ -12,13 +12,9 @@ export default defineUserConfig({
   theme,
 
   plugins: [
-    docsearchPlugin({
-      appId: "LB4MLU4E9H",
-      apiKey: "b17f1fe317eddb3699edf886fcb93267",
-      indexName:"books_index",
-      searchParameters: {
-        facetFilters: ['tags:v2'],
-      },
+    searchProPlugin({
+      // 索引全部内容
+      indexContent: true,
     }),
   ],
 
